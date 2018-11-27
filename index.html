@@ -1,23 +1,35 @@
----
-layout: default
----
 
-<div class="home">
+<head><title>Webcams m/4</title>
+<meta http-equiv="Refresh" content="300"></head>
+<img src="http://d14350.ispservices.at/images/webcam/pos8.jpg">
+<img src="http://d15082.ispservices.at/webcam/pelmberg.jpg">
 
-  <h1 class="page-heading">Posts</h1>
+<img src="http://www.kirchschlag.net/webcam/kirchschlag.jpg" >
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+<img src="http://www.wetter-kirchschlag.at/online/breitenstein.jpg" >
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+<img src="http://www.wetter-muehlviertel.at/online/broadcast.jpg">
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
+<script type="text/javascript">
+ // <![CDATA[
+function updateClock() {
+	var tDate = new Date();
+	document.getElementById('weba_clock').innerHTML = tDate.getDate() + ". " 
+													+ (parseInt(tDate.getMonth())+1) + ". " 
+													+ tDate.getFullYear() + ", "
+	  												+ lpad(tDate.getHours(),2,'0') + ":" 
+                                   					+ lpad(tDate.getMinutes(),2,'0') + ":" 
+                                   					+ lpad(tDate.getSeconds(),2,'0');
+	setTimeout("updateClock()", 1000);
+}
+function lpad (str,len,c) {
+	str = str.toString();
+	while (str.length<len)
+		str=c+str;
+	return str;	
+}
+updateClock();
+// ]]>
+</script>
 </div>
